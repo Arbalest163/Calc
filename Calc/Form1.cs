@@ -168,8 +168,14 @@ namespace Calc
 
         private void button6_Click(object sender, EventArgs e)
         {
-
-            ExpressionLabel.Text = result.ToString();
+            if (double.IsInfinity(result) || double.IsNaN(result))
+            {
+                ExpressionLabel.Text = "0";
+            }
+            else
+            {
+                ExpressionLabel.Text = result.ToString();
+            }
             
         }
     }
