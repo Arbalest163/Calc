@@ -43,14 +43,16 @@ namespace Calc
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.dotButton = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExpressionLabel
             // 
+            this.ExpressionLabel.AutoEllipsis = true;
             this.ExpressionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ExpressionLabel.Cursor = System.Windows.Forms.Cursors.Cross;
             this.ExpressionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -58,17 +60,20 @@ namespace Calc
             this.ExpressionLabel.Name = "ExpressionLabel";
             this.ExpressionLabel.Size = new System.Drawing.Size(531, 69);
             this.ExpressionLabel.TabIndex = 0;
+            this.ExpressionLabel.Text = "0";
             this.ExpressionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ExpressionLabel.TextChanged += new System.EventHandler(this.label1_TextChanged);
             // 
             // label2
             // 
+            this.label2.AutoEllipsis = true;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(12, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(531, 70);
             this.label2.TabIndex = 1;
+            this.label2.Text = "0";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // button1
@@ -100,7 +105,7 @@ namespace Calc
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 100);
             this.button3.TabIndex = 4;
-            this.button3.Text = "-";
+            this.button3.Text = "*";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -124,6 +129,7 @@ namespace Calc
             this.button5.TabIndex = 6;
             this.button5.Text = "3";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button8
             // 
@@ -134,6 +140,7 @@ namespace Calc
             this.button8.TabIndex = 12;
             this.button8.Text = "6";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -144,6 +151,7 @@ namespace Calc
             this.button9.TabIndex = 11;
             this.button9.Text = "5";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -152,8 +160,9 @@ namespace Calc
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(100, 100);
             this.button10.TabIndex = 10;
-            this.button10.Text = "*";
+            this.button10.Text = "-";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -164,6 +173,7 @@ namespace Calc
             this.button11.TabIndex = 9;
             this.button11.Text = "4";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -174,6 +184,7 @@ namespace Calc
             this.button12.TabIndex = 15;
             this.button12.Text = "9";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -184,6 +195,7 @@ namespace Calc
             this.button13.TabIndex = 14;
             this.button13.Text = "8";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -194,26 +206,29 @@ namespace Calc
             this.button14.TabIndex = 13;
             this.button14.Text = "7";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button6
+            // deleteButton
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(300, 578);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 100);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "C";
-            this.button6.UseVisualStyleBackColor = true;
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteButton.Location = new System.Drawing.Point(300, 578);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(100, 100);
+            this.deleteButton.TabIndex = 19;
+            this.deleteButton.Text = "C";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // button7
+            // dotButton
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(160, 578);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 100);
-            this.button7.TabIndex = 18;
-            this.button7.Text = ".";
-            this.button7.UseVisualStyleBackColor = true;
+            this.dotButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dotButton.Location = new System.Drawing.Point(160, 578);
+            this.dotButton.Name = "dotButton";
+            this.dotButton.Size = new System.Drawing.Size(100, 100);
+            this.dotButton.TabIndex = 18;
+            this.dotButton.Text = ".";
+            this.dotButton.UseVisualStyleBackColor = true;
+            this.dotButton.Click += new System.EventHandler(this.button7_Click);
             // 
             // button15
             // 
@@ -224,6 +239,7 @@ namespace Calc
             this.button15.TabIndex = 17;
             this.button15.Text = "/";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button16
             // 
@@ -234,14 +250,27 @@ namespace Calc
             this.button16.TabIndex = 16;
             this.button16.Text = "0";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Location = new System.Drawing.Point(12, 700);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(531, 100);
+            this.button6.TabIndex = 20;
+            this.button6.Text = "=";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 712);
+            this.ClientSize = new System.Drawing.Size(568, 812);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.dotButton);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button12);
@@ -259,8 +288,8 @@ namespace Calc
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ExpressionLabel);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(600, 800);
-            this.MinimumSize = new System.Drawing.Size(600, 800);
+            this.MaximumSize = new System.Drawing.Size(600, 900);
+            this.MinimumSize = new System.Drawing.Size(600, 900);
             this.Name = "Form1";
             this.Text = "Calculator";
             this.ResumeLayout(false);
@@ -283,10 +312,11 @@ namespace Calc
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button dotButton;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button6;
     }
 }
 
